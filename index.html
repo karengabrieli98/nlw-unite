@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
+  <script>
+    dayjs.extend(window.dayjs_plugin_relativeTime)
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt-br.js"></script>
+  <script>
+    dayjs.locale('pt-br')
+  </script>
+
+  <script type="text/javascript" src="index.js" defer=""></script>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <div class="container">
+  <header>
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="32" height="32" rx="7.11111" fill="#F48F56"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.0682 15.0585V12.7587L5.71097 15.1201H5.69678V17.4821H5.71097L12.0682 19.8463V17.5416L8.80823 16.2976L12.0682 15.0585Z" fill="#00292E"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.6328 18.0618L22.89 16.8249L19.6328 15.588V13.2882L25.9829 15.6524H25.9998V18.0165H25.9829L19.6328 20.3687V18.0618ZM16.9057 10.031L13.1708 22.0167H15.387L19.1219 10.031H16.9057Z" fill="#00292E"/>
+</svg>
+
+  </header>
+
+  <form onsubmit="adicionarParticipante(event)">
+    <fieldset>
+      <legend>Inscrição</legend>
+      <div>
+        <div class="input-wrapper">
+          <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_4003_2796)">
+<path d="M12 14.3188C12 13.258 11.5786 12.2406 10.8284 11.4904C10.0783 10.7403 9.06087 10.3188 8 10.3188C6.93913 10.3188 5.92172 10.7403 5.17157 11.4904C4.42143 12.2406 4 13.258 4 14.3188" stroke="#9FF9CC" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.00004 10.3189C9.4728 10.3189 10.6667 9.12502 10.6667 7.65226C10.6667 6.1795 9.4728 4.9856 8.00004 4.9856C6.52728 4.9856 5.33337 6.1795 5.33337 7.65226C5.33337 9.12502 6.52728 10.3189 8.00004 10.3189Z" stroke="#9FF9CC" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.00004 15.6522C11.6819 15.6522 14.6667 12.6674 14.6667 8.98551C14.6667 5.30362 11.6819 2.31885 8.00004 2.31885C4.31814 2.31885 1.33337 5.30362 1.33337 8.98551C1.33337 12.6674 4.31814 15.6522 8.00004 15.6522Z" stroke="#9FF9CC" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_4003_2796">
+<rect width="16" height="16" fill="white" transform="translate(0 0.985596)"/>
+</clipPath>
+</defs>
+</svg>
+
+        <input type="text" placeholder="Nome Completo" name="nome" required>
+          </div>
+
+         <div class="input-wrapper">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.6667 5.31885V8.65219C10.6667 9.18262 10.8774 9.69133 11.2525 10.0664C11.6276 10.4415 12.1363 10.6522 12.6667 10.6522C13.1971 10.6522 13.7059 10.4415 14.0809 10.0664C14.456 9.69133 14.6667 9.18262 14.6667 8.65219V7.98552C14.6667 6.48372 14.1596 5.02592 13.2277 3.8483C12.2957 2.67068 10.9934 1.84224 9.53173 1.49719C8.07011 1.15215 6.5348 1.31072 5.17456 1.94722C3.81431 2.58372 2.70882 3.66085 2.0372 5.0041C1.36558 6.34734 1.16717 7.87801 1.47412 9.34811C1.78107 10.8182 2.57539 12.1416 3.7284 13.1039C4.88141 14.0661 6.32554 14.6109 7.82683 14.6499C9.32812 14.689 10.7986 14.2199 12 13.3189" stroke="#9FF9CC" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+        <input type="email" placeholder="Email" name="email" required>
+          </div>
+
+        <button>
+          REALIZAR INSCRIÇÃO
+        </button>
+      </div>
+    </fieldset>
+  </form>
+  <section class="lista-participantes">
+    <h2>Participantes</h2>
+    
+    <div>
+
+    <table width="100%">
+      <thead style="text-align: left">
+        <tr>
+          <th>Participante</th>
+          <th>Data da inscrição</th>
+          <th>Data do check-in</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+      </tbody>
+  
+    
+    </table>
+  
+    </div>
+  </section>
+  <script src="./index.js"></script>
+  </div>
+</body>
+
+</html>
